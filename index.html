@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Форма регистрации</title>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" placeholder="Николай" required>
+
+            <label for="phone">Номер телефона:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7(921)-761-09-90" required>
+
+            <label for="photo">Загрузите фотографию:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <button type="submit" class="submit-button">Подтвердить</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const photo = document.getElementById('photo').files.length;
+
+            if (!username || !phone || !photo) {
+                event.preventDefault();
+                document.getElementById('error-message').textContent = "Пожалуйста, заполните все поля";
+            } else {
+                document.getElementById('error-message').textContent = "";
+            }
+        });
+    </script>
+</body>
+</html>
