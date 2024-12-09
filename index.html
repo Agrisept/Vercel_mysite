@@ -18,6 +18,9 @@
             <label for="photo">Загрузите фотографию:</label>
             <input type="file" id="photo" name="photo" accept="image/*" required>
 
+            <label for="message">Введите сообщение:</label>
+            <input type="text" id="message" name="message" placeholder="Привет, друг..." required>
+
             <button type="submit" class="submit-button">Подтвердить</button>
             <p id="error-message" class="error-message"></p>
         </form>
@@ -28,8 +31,9 @@
             const username = document.getElementById('username').value;
             const phone = document.getElementById('phone').value;
             const photo = document.getElementById('photo').files.length;
+            const message = document.getElementById('message').value;
 
-            if (!username || !phone || !photo) {
+            if (!username || !phone || !photo || !message) {
                 event.preventDefault();
                 document.getElementById('error-message').textContent = "Пожалуйста, заполните все поля";
             } else {
