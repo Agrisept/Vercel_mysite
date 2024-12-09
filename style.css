@@ -19,18 +19,11 @@ label {
 
 input[type="text"],
 input[type="tel"],
+input[type="message"],
 input[type="file"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-input[type="message"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 30px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
