@@ -1,47 +1,105 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Форма регистрации</title>
-</head>
-<body>
-    <div class="container">
-        <form id="registrationForm">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" name="username" placeholder="Николай" required>
-
-            <label for="phone">Номер телефона:</label>
-            <input type="tel" id="phone" name="phone" placeholder="+7(921)-761-09-90" required>
-
-            <label for="message">Введите сообщение:</label>
-            <input type="text" id="message" name="message" placeholder="Привет, друг..." required>
-
-            <label for="photo">Загрузите фотографию:</label>
-            <input type="file" id="photo" name="photo" accept="image/*" required>
-
-            
-
-            <button type="submit" class="submit-button">Подтвердить</button>
-            <p id="error-message" class="error-message"></p>
-        </form>
-    </div>
-
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            const username = document.getElementById('username').value;
-            const phone = document.getElementById('phone').value;
-            const photo = document.getElementById('photo').files.length;
-            const message = document.getElementById('message').value;
-
-            if (!username || !phone || !message || !photo) {
-                event.preventDefault();
-                document.getElementById('error-message').textContent = "Пожалуйста, заполните все поля";
-            } else {
-                document.getElementById('error-message').textContent = "";
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Portfolio_html </title>
+        <!-- <link rel="stylesheet" href="styles3.css"> -->
+        <style>
+            @font-face {
+                font-family: "Sofia Sans"; 
+                src: url("SofiaSans-Bold.ttf") format("truetype"); 
+                font-style: normal; 
+                font-weight: normal; 
             }
-        });
-    </script>
-</body>
+            @font-face {
+                font-family: "Cascadia Mono"; 
+                src: url("CascadiaMonoPL-SemiBold.otf") format("truetype"); 
+                font-style: normal; 
+                font-weight: normal; 
+            }
+            @font-face {
+                font-family: "Shentox"; 
+                src: url("Shentox-Regular.ttf") format("truetype"); 
+                font-style: normal; 
+                font-weight: normal; 
+            }
+            .body {
+                background-color: #b4dad7;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            .title {
+                background-color: #4D8D76;
+                color: white;
+                text-align: center;
+                font-size: 40px;
+            }
+            .sofia {
+                font-family: "Sofia Sans";
+                margin-bottom: 2em;
+                padding: 1em 1em;
+            }
+            .shentox {
+                font-family: "Shentox";
+                margin: 0px;
+                padding-left: 0;
+                font-size: 32px;
+                color: #2e2929;
+                text-align: center;
+            }
+            .grid {
+                display: grid;
+                text-align: center;
+                align-items: center;
+                justify-items: center;
+                font-family: "Shentox";
+                font-size: 16px;
+                color: #2e2929;
+                grid-template-columns: 1fr 250px 1fr 250px 1fr;
+                grid-template-rows: 300px 10px;
+            }
+            .flex {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+            .footer {
+                background-color: #234F3F;
+                font-family: "Cascadia Mono";
+                color: white;
+                font-size: 12px;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title sofia"> За оградой </div>
+        <div class="shentox" style="margin-bottom: 1em;"> Мультфильм про любопытство, которое чуть не обернулось трагедией </div>
+        <div class="shentox" style="margin-bottom: 2em;"> <img src="img/Кадр_06.png" style="height: 600px; align-content: center;"></div>
+
+        <div class="shentox" style="margin-bottom: 1em;"> Работа над анимацией </div>
+        <div class="grid">
+            <div>   </div>
+            <div><img src="img/Эскиз.png" style="height: 250px; width: 522px; align-content: center;"></div>
+            <div>   </div>
+            <div><img src="img/Кадр_20.png" style="height: 250px; width: 522px; align-content: center;"></div>
+            <div>   </div>
+            <div>   </div>
+            <div style="margin-bottom: 1em;"> Первоначальные наброски локаций мультфильма.  </div>    
+            <div></div>    
+            <div style="margin-bottom: 1em;"> Сцена с появлением светлячков в тёмном лесу. </div>
+            <div>   </div>
+        </div>
+
+        <div class="shentox" style="margin-top: 5em; margin-bottom: 1em;"> Мультфильм </div>
+        <div class="flex"><iframe src="HTML/За оградой.html" scrolling="no" frameborder="no" style="height: 700px; width: 1100px;"></iframe></div>
+
+        <footer>
+            <div class="footer">&copy by Ksenia Nevmerzhitskaya</div>
+        </footer>
+
+    </body>
 </html>
